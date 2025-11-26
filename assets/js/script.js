@@ -15,6 +15,7 @@ async function init() {
     // Initialize UI interactions after content is loaded
     initMobileMenu();
     initSmoothScroll();
+    initScrollObserver();
 }
 
 // --- Data Fetching Helper ---
@@ -35,17 +36,25 @@ async function loadProfile() {
     const data = await fetchData('profile.json');
     if (!data) return;
 
+    // Navbar Logo
+    const navLogo = document.getElementById('nav-logo');
+    if (navLogo) {
+        navLogo.textContent = data.name;
+    }
+
     // Hero Section
     const heroContainer = document.querySelector('.hero-content');
     if (heroContainer) {
         heroContainer.innerHTML = `
             <h1>${data.name}</h1>
             <p class="tagline">${data.tagline}</p>
+            ${data.location ? `<p class="location" style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.9rem;">📍 ${data.location}</p>` : ''}
             <p class="bio">${data.about.summary}</p>
             <div class="social-links">
                 ${data.social.github ? `<a href="${data.social.github}" target="_blank" class="social-link">GitHub</a>` : ''}
                 ${data.social.linkedin ? `<a href="${data.social.linkedin}" target="_blank" class="social-link">LinkedIn</a>` : ''}
                 ${data.social.twitter ? `<a href="${data.social.twitter}" target="_blank" class="social-link">Twitter</a>` : ''}
+                ${data.social.portfolio ? `<a href="${data.social.portfolio}" target="_blank" class="social-link">Portfolio</a>` : ''}
                 ${data.social.email ? `<a href="${data.social.email}" class="social-link">Email</a>` : ''}
             </div>
         `;
@@ -303,5 +312,17 @@ function initSmoothScroll() {
                 }
             }
         });
+    });
+}
+
+function initScrollObserver() {
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     });
 }

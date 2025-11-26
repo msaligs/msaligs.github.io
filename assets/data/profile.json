@@ -1,14 +1,16 @@
 {
   "name": "Mohd Shahid",
-  "tagline": "Full Stack Developer & UI/UX Enthusiast",
+  "tagline": "Computer Vision Engineer",
+  "location": "Hyderabad, Telangana, India",
   "about": {
-    "summary": "I am a passionate developer with a knack for building beautiful and functional web applications. I love exploring new technologies and solving complex problems.",
+    "summary": "Curious mind exploring AI and computer vision. Currently building DeepStream-based system architectures—learning from the ground up, experimenting boldly, and growing with humility.",
     "personal": "When I'm not coding, you can find me hiking, reading sci-fi novels, or experimenting with new cooking recipes."
   },
   "social": {
     "github": "https://github.com/msaligs",
     "linkedin": "https://www.linkedin.com/in/msaligs/",
     "twitter": "https://twitter.com/msaligs",
-    "email": "mailto:hello@example.com"
+    "email": "mailto:msaligs@gmail.com",
+    "portfolio": "https://app.onlinedegree.iitm.ac.in/student/21F2000901"
   }
 }

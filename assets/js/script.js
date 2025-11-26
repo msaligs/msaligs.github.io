@@ -1,0 +1,307 @@
+document.addEventListener('DOMContentLoaded', () => {
+    init();
+});
+
+async function init() {
+    await loadProfile();
+    await loadExperience();
+    await loadEducation();
+    await loadCertifications();
+    await loadProjects();
+    await loadLibrary();
+    await loadArticles();
+    await loadLinks();
+    
+    // Initialize UI interactions after content is loaded
+    initMobileMenu();
+    initSmoothScroll();
+}
+
+// --- Data Fetching Helper ---
+async function fetchData(fileName) {
+    try {
+        const response = await fetch(`assets/data/${fileName}`);
+        if (!response.ok) throw new Error(`Failed to load ${fileName}`);
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
+// --- Section Renderers ---
+
+async function loadProfile() {
+    const data = await fetchData('profile.json');
+    if (!data) return;
+
+    // Hero Section
+    const heroContainer = document.querySelector('.hero-content');
+    if (heroContainer) {
+        heroContainer.innerHTML = `
+            <h1>${data.name}</h1>
+            <p class="tagline">${data.tagline}</p>
+            <p class="bio">${data.about.summary}</p>
+            <div class="social-links">
+                ${data.social.github ? `<a href="${data.social.github}" target="_blank" class="social-link">GitHub</a>` : ''}
+                ${data.social.linkedin ? `<a href="${data.social.linkedin}" target="_blank" class="social-link">LinkedIn</a>` : ''}
+                ${data.social.twitter ? `<a href="${data.social.twitter}" target="_blank" class="social-link">Twitter</a>` : ''}
+                ${data.social.email ? `<a href="${data.social.email}" class="social-link">Email</a>` : ''}
+            </div>
+        `;
+    }
+
+    // About Section
+    const aboutContent = document.getElementById('about-content');
+    if (aboutContent) {
+        aboutContent.innerHTML = `
+            <div class="card">
+                <h3>Professional Summary</h3>
+                <p>${data.about.summary}</p>
+            </div>
+            <div class="card">
+                <h3>Personal Life</h3>
+                <p>${data.about.personal}</p>
+            </div>
+        `;
+    }
+
+    // Footer
+    const footerInfo = document.getElementById('footer-info');
+    if (footerInfo) {
+        footerInfo.innerHTML = `
+            <h3>${data.name}</h3>
+            <p>${data.tagline}</p>
+            <div class="social-links" style="justify-content: center; margin-top: 1rem;">
+                 ${data.social.email ? `<a href="${data.social.email}" class="social-link">Get in Touch</a>` : ''}
+            </div>
+        `;
+    }
+    
+    document.getElementById('year').textContent = new Date().getFullYear();
+}
+
+async function loadExperience() {
+    const data = await fetchData('experience.json');
+    const container = document.getElementById('experience-list');
+    const section = document.getElementById('experience');
+
+    if (!data || data.length === 0) {
+        if (section) section.style.display = 'none';
+        return;
+    }
+
+    container.innerHTML = data.map(item => `
+        <div class="timeline-item">
+            <h3>${item.role}</h3>
+            <span class="meta">${item.company} | ${item.period}</span>
+            <p>${item.description}</p>
+        </div>
+    `).join('');
+}
+
+async function loadEducation() {
+    const data = await fetchData('education.json');
+    const container = document.getElementById('education-list');
+    const section = document.getElementById('education');
+
+    if (!data || data.length === 0) {
+        if (section) section.style.display = 'none';
+        return;
+    }
+
+    container.innerHTML = data.map(item => `
+        <div class="card">
+            <h3>${item.degree}</h3>
+            <span class="meta">${item.institution} | ${item.period}</span>
+            <p>${item.description}</p>
+        </div>
+    `).join('');
+}
+
+async function loadCertifications() {
+    const data = await fetchData('certifications.json');
+    const container = document.getElementById('certifications-list');
+    const section = document.getElementById('certifications');
+
+    if (!data || data.length === 0) {
+        if (section) section.style.display = 'none';
+        return;
+    }
+
+    container.innerHTML = data.map(item => `
+        <div class="card">
+            <h3>${item.name}</h3>
+            <span class="meta">${item.issuer} | ${item.date}</span>
+            ${item.url ? `<a href="${item.url}" target="_blank" class="btn-link">Verify Credential &rarr;</a>` : ''}
+        </div>
+    `).join('');
+}
+
+async function loadProjects() {
+    const data = await fetchData('projects.json');
+    
+    // Split into Projects and Exploration
+    const projects = data ? data.filter(item => item.type === 'project') : [];
+    const exploration = data ? data.filter(item => item.type === 'exploration') : [];
+
+    // Render Projects
+    const projectsContainer = document.getElementById('projects-list');
+    const projectsSection = document.getElementById('projects');
+    
+    if (projects.length === 0) {
+        if (projectsSection) projectsSection.style.display = 'none';
+    } else {
+        projectsContainer.innerHTML = projects.map(item => renderProjectCard(item)).join('');
+    }
+
+    // Render Exploration
+    const explorationContainer = document.getElementById('exploration-list');
+    const explorationSection = document.getElementById('exploration');
+
+    if (exploration.length === 0) {
+        if (explorationSection) explorationSection.style.display = 'none';
+    } else {
+        explorationContainer.innerHTML = exploration.map(item => renderProjectCard(item)).join('');
+    }
+}
+
+function renderProjectCard(item) {
+    return `
+        <div class="card">
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                ${item.tech.map(t => `<span style="font-size: 0.8rem; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">${t}</span>`).join('')}
+            </div>
+            <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                ${item.repoUrl ? `<a href="${item.repoUrl}" target="_blank" class="btn-link">GitHub</a>` : ''}
+                ${item.demoUrl ? `<a href="${item.demoUrl}" target="_blank" class="btn-link">Live Demo</a>` : ''}
+            </div>
+        </div>
+    `;
+}
+
+async function loadLibrary() {
+    const data = await fetchData('library.json');
+    const section = document.getElementById('library');
+    
+    if (!data || data.length === 0) {
+        if (section) section.style.display = 'none';
+        return;
+    }
+
+    // Filter for public books only
+    const publicBooks = data.filter(book => book.visibility === 'public');
+
+    if (publicBooks.length === 0) {
+        if (section) section.style.display = 'none';
+        return;
+    }
+
+    // Render Public Books
+    const digitalContainer = document.getElementById('digital-books-list');
+    // We reuse the 'digital-books-list' container for the main list for now, 
+    // or we could rename it in HTML. Let's just use it to avoid HTML changes if possible,
+    // but the HTML has two subsections. Let's hide the second one and use the first one for "Featured Library".
+    
+    // Hide the hardcopy subsection container if it exists (it was commented out in HTML but let's be safe)
+    const hardCopySubsection = document.querySelector('#library .library-subsection:last-child');
+    if (hardCopySubsection) hardCopySubsection.style.display = 'none';
+
+    // Rename the first subsection title
+    const firstSubsectionTitle = document.querySelector('#library .library-subsection:first-child h3');
+    if (firstSubsectionTitle) firstSubsectionTitle.textContent = "Featured Books";
+
+    digitalContainer.innerHTML = publicBooks.map(book => `
+        <div class="card">
+            <h3>${book.title}</h3>
+            <span class="meta">by ${book.author}</span>
+            <div style="margin-top: 0.5rem;">
+                <span style="font-size: 0.8rem; background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">${book.status || 'Owned'}</span>
+                <span style="font-size: 0.8rem; color: var(--text-secondary); margin-left: 0.5rem;">${book.format}</span>
+            </div>
+            ${book.link ? `<a href="${book.link}" target="_blank" class="btn-link" style="font-size: 0.9rem; margin-top: 0.5rem;">View Book</a>` : ''}
+        </div>
+    `).join('');
+}
+
+async function loadArticles() {
+    const data = await fetchData('articles.json');
+    const container = document.getElementById('articles-list');
+    const section = document.getElementById('knowledge-base');
+
+    if (!data || data.length === 0) {
+        if (section) section.style.display = 'none';
+        return;
+    }
+
+    container.innerHTML = data.map(item => `
+        <div class="card">
+            <h3><a href="${item.url}" target="_blank">${item.title} &nearr;</a></h3>
+            <p>${item.notes}</p>
+            <div style="margin-top: 1rem;">
+                ${item.tags.map(tag => `<span style="font-size: 0.8rem; color: var(--text-secondary);">#${tag} </span>`).join('')}
+            </div>
+        </div>
+    `).join('');
+}
+
+async function loadLinks() {
+    const data = await fetchData('links.json');
+    const container = document.getElementById('links-list');
+    const section = document.getElementById('vault');
+
+    if (!data || data.length === 0) {
+        if (section) section.style.display = 'none';
+        return;
+    }
+
+    container.innerHTML = data.map(item => `
+        <div class="card" style="padding: 1.5rem;">
+            <span class="meta" style="margin-bottom: 0.5rem;">${item.category}</span>
+            <h3><a href="${item.url}" target="_blank">${item.title} &nearr;</a></h3>
+        </div>
+    `).join('');
+}
+
+// --- UI Interactions ---
+
+function initMobileMenu() {
+    const btn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav-links');
+    
+    if (btn && nav) {
+        btn.addEventListener('click', () => {
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            if (nav.style.display === 'flex') {
+                nav.style.flexDirection = 'column';
+                nav.style.position = 'absolute';
+                nav.style.top = '100%';
+                nav.style.left = '0';
+                nav.style.width = '100%';
+                nav.style.background = 'rgba(26, 29, 33, 0.95)';
+                nav.style.padding = '2rem';
+            }
+        });
+    }
+}
+
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                const nav = document.querySelector('.nav-links');
+                if (window.innerWidth <= 768 && nav) {
+                    nav.style.display = 'none';
+                }
+            }
+        });
+    });
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "status": "Read",
+    "link": "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882",
+    "format": "Digital",
+    "visibility": "public"
+  },
+  {
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt",
+    "status": "Reading",
+    "link": "https://www.amazon.com/Pragmatic-Programmer-journey-mastery-Anniversary/dp/0135957052",
+    "format": "Digital",
+    "visibility": "public"
+  },
+  {
+    "title": "Design of Everyday Things",
+    "author": "Don Norman",
+    "isbn": "978-0465050659",
+    "purchased": "2021",
+    "format": "Hard Copy",
+    "visibility": "private"
+  },
+  {
+    "title": "Introduction to Algorithms",
+    "author": "Cormen et al.",
+    "isbn": "978-0262033848",
+    "purchased": "2019",
+    "format": "Hard Copy",
+    "visibility": "private"
+  }
+]

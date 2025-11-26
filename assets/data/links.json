@@ -1,0 +1,17 @@
+[
+  {
+    "title": "MDN Web Docs",
+    "url": "https://developer.mozilla.org/",
+    "category": "Reference"
+  },
+  {
+    "title": "Figma",
+    "url": "https://www.figma.com/",
+    "category": "Design"
+  },
+  {
+    "title": "GitHub",
+    "url": "https://github.com/",
+    "category": "Tools"
+  }
+]

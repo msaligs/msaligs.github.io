@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Understanding CSS Grid",
+    "url": "https://css-tricks.com/snippets/css/complete-guide-grid/",
+    "notes": "A comprehensive guide to CSS Grid layout. Key takeaways: grid-template-columns, fr units, and minmax().",
+    "tags": ["CSS", "Frontend"]
+  },
+  {
+    "title": "The Future of WebAssembly",
+    "url": "https://webassembly.org/",
+    "notes": "Interesting read on how WASM is changing the web performance landscape.",
+    "tags": ["WASM", "Performance"]
+  }
+]

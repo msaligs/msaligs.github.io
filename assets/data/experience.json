@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "role": "Senior Frontend Engineer",
+    "company": "Tech Corp",
+    "period": "2021 - Present",
+    "description": "Leading the frontend team, architecting scalable UI components, and improving site performance by 40%."
+  },
+  {
+    "id": 2,
+    "role": "Web Developer",
+    "company": "Creative Agency",
+    "period": "2018 - 2021",
+    "description": "Developed responsive websites for diverse clients, collaborated with designers, and implemented CMS solutions."
+  }
+]

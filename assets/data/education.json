@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "degree": "Master of Computer Science",
+    "institution": "University of Tech",
+    "period": "2016 - 2018",
+    "description": "Specialized in Human-Computer Interaction and Artificial Intelligence."
+  },
+  {
+    "id": 2,
+    "degree": "Bachelor of Science in IT",
+    "institution": "State University",
+    "period": "2012 - 2016",
+    "description": "Graduated with Honors. President of the Coding Club."
+  }
+]

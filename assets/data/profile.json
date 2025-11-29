@@ -4,13 +4,13 @@
   "location": "Hyderabad, Telangana, India",
   "about": {
     "summary": "Curious mind exploring AI and computer vision. Currently building DeepStream-based system architectures—learning from the ground up, experimenting boldly, and growing with humility.",
-    "personal": "When I'm not coding, you can find me hiking, reading sci-fi novels, or experimenting with new cooking recipes."
+    "extended_summary": "I am a Computer Vision Engineer currently at the beginning of my professional journey while pursuing a BS in Data Science from IIT Madras. My interest lies in building video analytics systems and exploring the capabilities of DeepStream. I believe in learning by doing—experimenting with new technologies, understanding system internals, and continuously refining my approach to engineering problems.",
+    "personal": "Outside of coding, I enjoy staying updated with the latest tech blogs and experimenting with system configurations. I also value downtime to recharge, whether that's catching up on rest or simply unplugging for a while also knows as doing nothing :)."
   },
   "social": {
     "github": "https://github.com/msaligs",
     "linkedin": "https://www.linkedin.com/in/msaligs/",
-    "twitter": "https://twitter.com/msaligs",
-    "email": "mailto:msaligs@gmail.com",
-    "portfolio": "https://app.onlinedegree.iitm.ac.in/student/21F2000901"
+    "IIT M": "https://app.onlinedegree.iitm.ac.in/student/21F2000901",
+    "microsoft_learn": "https://learn.microsoft.com/en-us/users/msaligs/"
   }
 }

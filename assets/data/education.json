@@ -1,16 +1,37 @@
 [
   {
     "id": 1,
-    "degree": "Master of Computer Science",
-    "institution": "University of Tech",
-    "period": "2016 - 2018",
-    "description": "Specialized in Human-Computer Interaction and Artificial Intelligence."
+    "degree": "Bachelor of Science - BS, Data Science & Application",
+    "institution": "Indian Institute of Technology, Madras",
+    "period": "Feb 2021 - Dec 2026",
+    "description": ""
   },
   {
     "id": 2,
-    "degree": "Bachelor of Science in IT",
-    "institution": "State University",
-    "period": "2012 - 2016",
-    "description": "Graduated with Honors. President of the Coding Club."
+    "degree": "Diploma in Programming",
+    "institution": "Indian Institute of Technology, Madras",
+    "period": "Apr 2025",
+    "description": ""
+  },
+  {
+    "id": 3,
+    "degree": "Bachelor of Technology - BTech, Computer Science",
+    "institution": "Maulana Azad National Urdu University, Hyderabad",
+    "period": "Sep 2020 - Jul 2024",
+    "description": ""
+  },
+  {
+    "id": 4,
+    "degree": "Diploma in Electrical Engineering",
+    "institution": "Aligarh Muslim University, Aligarh",
+    "period": "2014 - 2017",
+    "description": ""
+  },
+  {
+    "id": 5,
+    "degree": "High School",
+    "institution": "STS High School (Minto Circle)",
+    "period": "May 2009 - Jun 2014",
+    "description": ""
   }
 ]

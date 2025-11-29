@@ -1,13 +1,5 @@
 [
   {
-    "title": "OpenCV YOLO11 DeepSort Store",
-    "description": "Real-time customer tracking system using computer vision to monitor how long customers spend in a store. Combines YOLO v11m for person detection with DeepSort tracking.",
-    "tech": ["Python", "OpenCV", "YOLO", "DeepSort"],
-    "repoUrl": "https://github.com/msaligs/OpenCV_YOLO11_DeepSort_Customer_time_Store",
-    "demoUrl": null,
-    "type": "project"
-  },
-  {
     "title": "Timerizer",
     "description": "A simple Python library that provides a decorator to measure the execution time of functions.",
     "tech": ["Python"],
@@ -64,14 +56,6 @@
     "type": "project"
   },
   {
-    "title": "AI Text",
-    "description": "AI text processing project.",
-    "tech": ["AI"],
-    "repoUrl": "https://github.com/msaligs/ai-text",
-    "demoUrl": null,
-    "type": "exploration"
-  },
-  {
     "title": "RGB to Hex",
     "description": "Utility to convert RGB colors to Hex format.",
     "tech": ["Utility"],
@@ -84,30 +68,6 @@
     "description": "A basic calculator application.",
     "tech": [],
     "repoUrl": "https://github.com/msaligs/simple_calculator",
-    "demoUrl": null,
-    "type": "exploration"
-  },
-  {
-    "title": "Streamlit First",
-    "description": "First experiment with Streamlit.",
-    "tech": ["Python", "Streamlit"],
-    "repoUrl": "https://github.com/msaligs/streamlit_first",
-    "demoUrl": null,
-    "type": "exploration"
-  },
-  {
-    "title": "PDSA",
-    "description": "Data Structures and Algorithms practice.",
-    "tech": ["Algorithms"],
-    "repoUrl": "https://github.com/msaligs/PDSA",
-    "demoUrl": null,
-    "type": "exploration"
-  },
-  {
-    "title": "Config (msaligs)",
-    "description": "Config files for my GitHub profile.",
-    "tech": ["Config"],
-    "repoUrl": "https://github.com/msaligs/msaligs",
     "demoUrl": null,
     "type": "exploration"
   }

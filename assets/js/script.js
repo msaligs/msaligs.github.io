@@ -16,6 +16,8 @@ async function init() {
     initMobileMenu();
     initSmoothScroll();
     initScrollObserver();
+    updateVisitCount();
+    logVisit();
 }
 
 // --- Data Fetching Helper ---
@@ -55,6 +57,8 @@ async function loadProfile() {
                 ${data.social.linkedin ? `<a href="${data.social.linkedin}" target="_blank" class="social-link">LinkedIn</a>` : ''}
                 ${data.social.twitter ? `<a href="${data.social.twitter}" target="_blank" class="social-link">Twitter</a>` : ''}
                 ${data.social.portfolio ? `<a href="${data.social.portfolio}" target="_blank" class="social-link">Portfolio</a>` : ''}
+                ${data.social["IIT M"] ? `<a href="${data.social["IIT M"]}" target="_blank" class="social-link">IIT Madras</a>` : ''}
+                ${data.social.microsoft_learn ? `<a href="${data.social.microsoft_learn}" target="_blank" class="social-link">Microsoft Learn</a>` : ''}
                 ${data.social.email ? `<a href="${data.social.email}" class="social-link">Email</a>` : ''}
             </div>
         `;
@@ -66,7 +70,7 @@ async function loadProfile() {
         aboutContent.innerHTML = `
             <div class="card">
                 <h3>Professional Summary</h3>
-                <p>${data.about.summary}</p>
+                <p>${data.about.extended_summary || data.about.summary}</p>
             </div>
             <div class="card">
                 <h3>Personal Life</h3>
@@ -103,7 +107,10 @@ async function loadExperience() {
     container.innerHTML = data.map(item => `
         <div class="timeline-item">
             <h3>${item.role}</h3>
-            <span class="meta">${item.company} | ${item.period}</span>
+            <span class="meta">
+                ${item.url ? `<a href="${item.url}" target="_blank" style="color: inherit; text-decoration: underline; text-decoration-color: var(--accent-primary);">${item.company}</a>` : item.company} 
+                | ${item.period}
+            </span>
             <p>${item.description}</p>
         </div>
     `).join('');
@@ -282,16 +289,24 @@ function initMobileMenu() {
     
     if (btn && nav) {
         btn.addEventListener('click', () => {
-            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-            if (nav.style.display === 'flex') {
-                nav.style.flexDirection = 'column';
-                nav.style.position = 'absolute';
-                nav.style.top = '100%';
-                nav.style.left = '0';
-                nav.style.width = '100%';
-                nav.style.background = 'rgba(26, 29, 33, 0.95)';
-                nav.style.padding = '2rem';
+            btn.classList.toggle('active');
+            nav.classList.toggle('active');
+            
+            // Prevent scrolling when menu is open
+            if (nav.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
             }
+        });
+
+        // Close menu when a link is clicked
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                btn.classList.remove('active');
+                nav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
     }
 }
@@ -325,4 +340,47 @@ function initScrollObserver() {
             navbar.classList.remove('scrolled');
         }
     });
+}
+
+async function updateVisitCount() {
+    const counterElement = document.getElementById('visit-count');
+    if (!counterElement) return;
+
+    try {
+        // Using countapi.xyz with a unique namespace for this user
+        // If the key doesn't exist, it will be created and set to 1
+        const response = await fetch('https://api.countapi.xyz/hit/msaligs-portfolio/visits');
+        const data = await response.json();
+        counterElement.textContent = data.value;
+    } catch (error) {
+        console.error('Failed to fetch visit count:', error);
+        counterElement.textContent = '(Offline)';
+    }
+}
+
+async function logVisit() {
+    // Placeholder URL - User needs to update this after setting up the Google Script
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby-VFeMPYFR8BP0mrKJSnmYt38iW2NPaPhZoL269w59hNUQJaiHrjzZCzABphDmtIN4fQ/exec'; 
+    
+    try {
+        // 1. Get IP Address
+        const ipResponse = await fetch('https://api.ipify.org?format=json');
+        const ipData = await ipResponse.json();
+        
+        // 2. Send to Google Sheet
+        await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors', // Important for Google Scripts
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                ip: ipData.ip,
+                userAgent: navigator.userAgent
+            })
+        });
+        console.log('Visit logged successfully');
+    } catch (error) {
+        console.error('Failed to log visit:', error);
+    }
 }

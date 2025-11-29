@@ -1,14 +1,134 @@
 [
   {
-    "name": "AWS Certified Solutions Architect",
-    "issuer": "Amazon Web Services",
-    "date": "2023",
-    "url": "https://aws.amazon.com/certification/"
+    "name": "Microsoft Applied Skills: Implement a data science and machine learning solution with Microsoft Fabric",
+    "issuer": "Microsoft",
+    "date": "Jan 2025",
+    "url": "https://learn.microsoft.com/en-us/users/msaligs/transcript/7x5g9u58rkzo8px"
   },
   {
-    "name": "Google UX Design Professional Certificate",
-    "issuer": "Coursera",
-    "date": "2022",
-    "url": "https://www.coursera.org/professional-certificates/google-ux-design"
+    "name": "Numpy For Data Science",
+    "issuer": "Udemy",
+    "date": "Sep 2024",
+    "url": null
+  },
+  {
+    "name": "Machine Learning Technique",
+    "issuer": "IIT Madras BS in Data Science Programme",
+    "date": "Aug 2024",
+    "url": null
+  },
+  {
+    "name": "Cricket Data Analysis using PostgreSQL",
+    "issuer": "NPTEL",
+    "date": "Feb 2024",
+    "url": null
+  },
+  {
+    "name": "Pandas",
+    "issuer": "Kaggle",
+    "date": "Feb 2024",
+    "url": null
+  },
+  {
+    "name": "Back End Development and APIs",
+    "issuer": "freeCodeCamp",
+    "date": "Sep 2023",
+    "url": null
+  },
+  {
+    "name": "Rest API (Intermediate)",
+    "issuer": "HackerRank",
+    "date": "Sep 2023",
+    "url": null
+  },
+  {
+    "name": "Hands on experience on Internet of Things",
+    "issuer": "IISER Bhopal",
+    "date": "Jul 2023",
+    "url": null
+  },
+  {
+    "name": "Microsoft Certified: Azure AI Fundamentals",
+    "issuer": "Microsoft",
+    "date": "May 2023",
+    "url": "https://learn.microsoft.com/en-us/users/msaligs/transcript/7x5g9u58rkzo8px"
+  },
+  {
+    "name": "Microsoft Certified: Azure Fundamentals",
+    "issuer": "Microsoft",
+    "date": "Apr 2023",
+    "url": "https://learn.microsoft.com/en-us/users/msaligs/transcript/7x5g9u58rkzo8px"
+  },
+  {
+    "name": "Documentary Film making Workshop",
+    "issuer": "Maulana Azad National Urdu University (MANUU)",
+    "date": "Mar 2023",
+    "url": null
+  },
+  {
+    "name": "Microsoft Certified: Power Platform Fundamentals",
+    "issuer": "Microsoft",
+    "date": "Mar 2023",
+    "url": "https://learn.microsoft.com/en-us/users/msaligs/transcript/7x5g9u58rkzo8px"
+  },
+  {
+    "name": "Social Computing",
+    "issuer": "NPTEL",
+    "date": "Feb 2023",
+    "url": null
+  },
+  {
+    "name": "Microsoft Certified: Azure Data Fundamentals",
+    "issuer": "Microsoft",
+    "date": "Jan 2023",
+    "url": "https://learn.microsoft.com/en-us/users/msaligs/transcript/7x5g9u58rkzo8px"
+  },
+  {
+    "name": "SQL Intermediate",
+    "issuer": "HackerRank",
+    "date": "Dec 2022",
+    "url": null
+  },
+  {
+    "name": "Foundation level in programming and data science",
+    "issuer": "IIT Madras BS in Data Science Programme",
+    "date": "Apr 2022",
+    "url": null
+  },
+  {
+    "name": "JavaScript Programming for Everyone",
+    "issuer": "Udemy",
+    "date": "Feb 2018",
+    "url": null
+  },
+  {
+    "name": "Ultimate JavaScript Strings",
+    "issuer": "Udemy",
+    "date": "Feb 2018",
+    "url": null
+  },
+  {
+    "name": "NCC B",
+    "issuer": "NATIONAL CADET CORPS - India",
+    "date": "Jun 2017",
+    "url": null
+  },
+  {
+    "name": "NCC A",
+    "issuer": "NATIONAL CADET CORPS - India",
+    "date": "Mar 2013",
+    "url": null
+  },
+  {
+    "name": "All India NCC Trekking Expedition (Boys) 2012",
+    "issuer": "NATIONAL CADET CORPS - India",
+    "date": "Oct 2012",
+    "url": null
+  },
+  {
+    "name": "Advance Certificate in ML and Data Science",
+    "issuer": "Indian Institute of Technology, Madras",
+    "date": "N/A",
+    "url": null
   }
 ]

@@ -401,16 +401,143 @@ img {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    :root {
+        --spacing-lg: 3rem;
+        --spacing-xl: 6rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+}
+
 @media (max-width: 768px) {
+    :root {
+        --spacing-md: 1.5rem;
+        --spacing-lg: 2.5rem;
+        --spacing-xl: 4rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
     
+    .hero-content .tagline {
+        font-size: 1.2rem;
+    }
+
     .nav-links {
-        display: none; /* Mobile menu to be implemented */
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(26, 29, 33, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        padding: 2rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
     }
     
     .mobile-menu-btn {
         display: block;
+        z-index: 1001;
+        position: relative;
+        width: 30px;
+        height: 20px;
+    }
+
+    .mobile-menu-btn span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--text-primary);
+        position: absolute;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-btn span:nth-child(1) { top: 0; }
+    .mobile-menu-btn span:nth-child(2) { top: 9px; }
+    .mobile-menu-btn span:nth-child(3) { top: 18px; }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 9px;
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 9px;
+    }
+
+    .grid-list, .projects-grid, .books-grid, .articles-grid, .links-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 1.5rem;
+    }
+
+    .timeline {
+        margin-left: 0.5rem;
+        padding-left: 1.5rem;
+    }
+    
+    .timeline-item::before {
+        left: -2.1rem;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center; /* Center align on mobile if preferred, or keep left */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+        word-wrap: break-word; /* Ensure long words don't overflow */
+    }
+    
+    .hero-content .tagline {
+        font-size: 1.1rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .social-links {
+        gap: 0.8rem;
+    }
+    
+    .social-link {
+        font-size: 1.2rem;
     }
 }

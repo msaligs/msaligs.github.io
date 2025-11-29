@@ -345,7 +345,6 @@ function initScrollObserver() {
 
 
 async function logVisit() {
-    // Placeholder URL - User needs to update this after setting up the Google Script
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby-VFeMPYFR8BP0mrKJSnmYt38iW2NPaPhZoL269w59hNUQJaiHrjzZCzABphDmtIN4fQ/exec'; 
     
     const counterElement = document.getElementById('visit-count');
@@ -355,17 +354,15 @@ async function logVisit() {
         const ipResponse = await fetch('https://api.ipify.org?format=json');
         const ipData = await ipResponse.json();
         
-        // 2. Send to Google Sheet and Get Count
-        const response = await fetch(GOOGLE_SCRIPT_URL, {
-            method: 'POST',
-            mode: 'cors', // Changed to 'cors' to read the response
-            headers: {
-                'Content-Type': 'text/plain;charset=utf-8', // 'text/plain' avoids preflight OPTIONS request which Google Scripts don't handle well
-            },
-            body: JSON.stringify({
-                ip: ipData.ip,
-                userAgent: navigator.userAgent
-            })
+        // 2. Send to Google Sheet using GET request (avoids CORS preflight)
+        const params = new URLSearchParams({
+            ip: ipData.ip,
+            userAgent: navigator.userAgent
+        });
+        
+        const response = await fetch(`${GOOGLE_SCRIPT_URL}?${params}`, {
+            method: 'GET',
+            mode: 'cors'
         });
 
         const data = await response.json();
@@ -374,7 +371,7 @@ async function logVisit() {
             counterElement.textContent = data.count;
         }
         
-        console.log('Visit logged successfully');
+        console.log('Visit logged successfully', data);
     } catch (error) {
         console.error('Failed to log visit:', error);
         if (counterElement) counterElement.textContent = '(Offline)';

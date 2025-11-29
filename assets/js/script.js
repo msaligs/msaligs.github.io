@@ -16,7 +16,7 @@ async function init() {
     initMobileMenu();
     initSmoothScroll();
     initScrollObserver();
-    updateVisitCount();
+    initScrollObserver();
     logVisit();
 }
 
@@ -342,45 +342,41 @@ function initScrollObserver() {
     });
 }
 
-async function updateVisitCount() {
-    const counterElement = document.getElementById('visit-count');
-    if (!counterElement) return;
 
-    try {
-        // Using countapi.xyz with a unique namespace for this user
-        // If the key doesn't exist, it will be created and set to 1
-        const response = await fetch('https://api.countapi.xyz/hit/msaligs-portfolio/visits');
-        const data = await response.json();
-        counterElement.textContent = data.value;
-    } catch (error) {
-        console.error('Failed to fetch visit count:', error);
-        counterElement.textContent = '(Offline)';
-    }
-}
 
 async function logVisit() {
     // Placeholder URL - User needs to update this after setting up the Google Script
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby-VFeMPYFR8BP0mrKJSnmYt38iW2NPaPhZoL269w59hNUQJaiHrjzZCzABphDmtIN4fQ/exec'; 
     
+    const counterElement = document.getElementById('visit-count');
+
     try {
         // 1. Get IP Address
         const ipResponse = await fetch('https://api.ipify.org?format=json');
         const ipData = await ipResponse.json();
         
-        // 2. Send to Google Sheet
-        await fetch(GOOGLE_SCRIPT_URL, {
+        // 2. Send to Google Sheet and Get Count
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
-            mode: 'no-cors', // Important for Google Scripts
+            mode: 'cors', // Changed to 'cors' to read the response
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'text/plain;charset=utf-8', // 'text/plain' avoids preflight OPTIONS request which Google Scripts don't handle well
             },
             body: JSON.stringify({
                 ip: ipData.ip,
                 userAgent: navigator.userAgent
             })
         });
+
+        const data = await response.json();
+        
+        if (data.count && counterElement) {
+            counterElement.textContent = data.count;
+        }
+        
         console.log('Visit logged successfully');
     } catch (error) {
         console.error('Failed to log visit:', error);
+        if (counterElement) counterElement.textContent = '(Offline)';
     }
 }

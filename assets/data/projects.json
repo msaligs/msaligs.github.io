@@ -1,7 +1,7 @@
 [
   {
     "title": "Music Genre Classification",
-    "description": "Designed a PyTorch deep learning pipeline for music genre predictions. Engineered robust Librosa audio feature extractors (Mel-spectrograms, MFCCs) and resolved domain shift discrepancies between clean audio training stems and noisy real-world composites using fine-tuned pretrained deep networks, tracked via Weights & Biases.",
+    "description": "Developed a PyTorch deep learning pipeline to classify music genres. Extracted audio features (Mel-spectrograms, MFCCs) using Librosa and explored domain shift discrepancies by fine-tuning pretrained deep networks to handle noisy real-world composite signals, tracking experiments with Weights & Biases.",
     "tech": ["PyTorch", "Librosa", "Audio Processing", "W&B tracking", "Kaggle Hub"],
     "repoUrl": "https://github.com/21f2000901/dl-genai-project-26-t1",
     "demoUrl": "https://huggingface.co/spaces/msaligs/music-genre-classifier",
@@ -9,7 +9,7 @@
   },
   {
     "title": "Home Service v2",
-    "description": "Developed a full-stack, multi-role home service booking and dispatch system for IIT Madras Modern Application Development 2 (MAD2) coursework. Implemented Celery for automated background triggers, Redis for responsive data caching, and designed clean interactive client-professional workflows.",
+    "description": "Built a full-stack, multi-role home services booking platform for the IIT Madras Modern Application Development 2 (MAD2) coursework. Gained hands-on experience implementing Celery for automated background tasks, Redis for caching, and SQLite for data management.",
     "tech": ["Flask", "Celery", "Redis", "SQLite3", "Vue.js"],
     "repoUrl": "https://github.com/msaligs/home_service_v2",
     "demoUrl": null,

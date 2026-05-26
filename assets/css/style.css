@@ -654,6 +654,7 @@ input[type="range"] {
 .sample-buttons, .audio-samples {
     display: flex;
     gap: 0.8rem;
+    flex-wrap: wrap;
 }
 
 /* Model Telemetry Panel */
@@ -1168,17 +1169,8 @@ input[type="range"] {
     }
 }
 
-@media (max-width: 768px) {
-    .bento-grid {
-        grid-template-columns: 1fr;
-    }
-    .bento-w2 {
-        grid-column: span 1;
-    }
-    .hero-title {
-        font-size: 3rem;
-        letter-spacing: -1px;
-    }
+/* Tablet screen collapse for navigation menu (prevents link clashes) */
+@media (max-width: 991px) {
     .mobile-menu-btn {
         display: flex;
     }
@@ -1188,14 +1180,16 @@ input[type="range"] {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 75%;
+        width: 70%;
+        max-width: 400px;
         height: 100vh;
-        background: rgba(6, 9, 14, 0.95);
+        background: rgba(6, 9, 14, 0.98);
         backdrop-filter: blur(20px);
         border-left: 1px solid var(--border-glass);
         padding: 8rem 3rem;
         transition: var(--transition);
         z-index: 100;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
     }
     
     .nav.active {
@@ -1214,24 +1208,138 @@ input[type="range"] {
     .nav-cta {
         display: none !important;
     }
-    
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+    .hero-section {
+        padding: 10rem 0 4rem 0;
+        min-height: auto;
+    }
+    .hero-title {
+        font-size: 2.75rem;
+        line-height: 1.15;
+        letter-spacing: -1.2px;
+    }
+    .hero-subtitle {
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+    }
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    .hero-cta .btn {
+        width: 100%;
+    }
+    .about-section {
+        padding: 4rem 0;
+    }
+    .about-lead {
+        font-size: 1.15rem;
+    }
+    .philosophy-block .about-lead {
+        font-size: 1.3rem;
+    }
+    .philosophy-footer {
+        font-size: 1.05rem !important;
+    }
+    .projects-section, .playground-section, .experience-section {
+        padding: 4rem 0;
+    }
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    .section-desc {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+    }
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    .bento-w2 {
+        grid-column: span 1;
+    }
+    .bento-card {
+        padding: 1.8rem;
+    }
+    .bento-card h3 {
+        font-size: 1.45rem;
+    }
+    .playground-tabs {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+    }
+    .tab-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.75rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    .playground-widget {
+        padding: 1.75rem;
+        border-radius: 20px;
+    }
+    .widget-controls h4 {
+        font-size: 1.2rem;
+    }
+    .prediction-results h5 {
+        font-size: 0.8rem;
+    }
+    .prob-row {
+        gap: 1rem;
+    }
+    .prob-label {
+        width: 70px;
+        font-size: 0.8rem;
+    }
+    .prob-pct {
+        width: 35px;
+        font-size: 0.8rem;
+    }
+    .waveform-container {
+        height: 220px;
+    }
+    .timeline {
+        padding: 1rem 0;
+    }
     .timeline-bar {
         left: 0.8rem;
     }
     .timeline-item {
         padding-left: 2.5rem;
+        margin-bottom: 3rem;
     }
     .timeline-node {
         left: 0.35rem;
+        top: 1.8rem;
     }
     .timeline-content {
         padding: 1.8rem;
     }
-    
+    .timeline-content h3 {
+        font-size: 1.3rem;
+    }
+    .role-location {
+        font-size: 0.85rem;
+    }
+    .footer {
+        padding: 3rem 0;
+        margin-top: 4rem;
+    }
     .footer-content {
         flex-direction: column;
         gap: 2rem;
         text-align: center;
+    }
+    .footer-content p {
+        font-size: 0.85rem;
     }
 }
 
@@ -1311,6 +1419,7 @@ input[type="range"] {
     display: flex;
     gap: 0.8rem;
     margin-top: 0.5rem;
+    flex-wrap: wrap;
 }
 
 .nlp-samples .btn-sm {

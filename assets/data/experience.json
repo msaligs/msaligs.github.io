@@ -5,14 +5,14 @@
     "company": "Nabeh",
     "url": "https://nabeh.sa/",
     "period": "Sep 2025 - Present",
-    "description": "Working on Computer Vision and DeepStream technologies."
+    "description": "Contributing to real-world video analytics workflows. Hands-on development of edge computer vision pipelines using YOLO, NVIDIA DeepStream, and Kafka inside Linux environments."
   },
   {
     "id": 2,
     "role": "Computer Vision Intern",
-    "company": "Master Works",
-    "url": "https://www.master-works.sa/index.php/en",
+    "company": "Nabeh",
+    "url": "https://nabeh.sa/",
     "period": "Mar 2025 - Aug 2025",
-    "description": "Internship focused on Computer Vision."
+    "description": "Assisted in engineering computer vision pipelines, built edge streaming components under mentorship, and explored deep learning models."
   }
 ]

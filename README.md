@@ -1,8 +1,6 @@
 # Mohd Shahid | Personal Portfolio & ML Playground
 
-I am driven by curiosity more than convention. 
-
-My work revolves around AI systems, automation, computer vision, Linux, infrastructure, and the invisible layers that keep technology functioning reliably. I enjoy understanding systems deeply — not just using them, but dissecting how they behave under pressure, failure, and scale.
+I work across AI, automation, computer vision, Linux, and infrastructure — building systems, debugging complexity, and understanding how things behave beneath the surface.
 
 This repository hosts my personal developer portfolio and interactive machine learning playground.
 

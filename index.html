@@ -3,162 +3,571 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MShahid</title>
-    <meta name="description" content="Personal Profile and Portfolio">
+    <title>Mohd Shahid | Systems, Data Science & AI Engineer</title>
+    <meta name="description" content="Mohd Shahid - BS Data Science student at IIT Madras (Roll No: 21F2000901) & BTech CS student at MANUU. Exploring AI systems, automation, and human behavior.">
     
-    <!-- Fonts -->
+    <!-- Premium Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- Styles -->
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Style Sheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- Canvas for Interactive Neural Network -->
+    <canvas id="neural-canvas"></canvas>
+
+    <!-- Floating Radial Background Orbs -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+
+    <!-- Header Navigation -->
+    <header class="header">
         <div class="container nav-container">
-            <a href="#" class="logo" id="nav-logo">Portfolio</a>
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <a href="#" class="logo">Mohd Shahid<span class="dot"></span></a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu" id="mobile-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#library">Library</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header id="hero" class="hero-section">
-        <div class="container hero-content">
-            <!-- Content injected by JS -->
-            <div class="hero-text-skeleton skeleton"></div>
+            <nav class="nav" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#playground" class="nav-link">ML Playground</a></li>
+                    <li><a href="#experience" class="nav-link">Education</a></li>
+                </ul>
+            </nav>
+            <a href="https://www.linkedin.com/in/msaligs/" target="_blank" class="btn btn-primary nav-cta magnetic">Connect on LinkedIn</a>
         </div>
     </header>
 
-    <main>
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div id="about-content" class="about-grid">
-                    <!-- Content injected by JS -->
-                </div>
+    <!-- Main Content Grid -->
+    <main class="container">
+        
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="badge-container">
+                <div class="badge">Systems & AI Engineer</div>
+                <!-- <div class="badge badge-outline">IIT Madras Data Science</div> -->
+            </div>
+            <h1 class="hero-title">Dissecting technology <span class="gradient-text">beneath the surface</span></h1>
+            <p class="hero-subtitle">
+                I'm Mohd Shahid. I build AI systems, construct robust Computer Vision pipelines, and design automated infrastructure layers. Driven by curiosity more than convention.
+            </p>
+            <div class="hero-cta">
+                <a href="#playground" class="btn btn-accent">Interactive Playground</a>
+                <a href="#projects" class="btn btn-secondary">Explore Projects</a>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <div class="container">
-                <h2 class="section-title">Experience</h2>
-                <div id="experience-list" class="timeline">
-                    <!-- Content injected by JS -->
+        <!-- About Section - Custom requested philosophy -->
+        <section class="about-section" id="about">
+            <h2 class="section-title"><span class="gradient-text">About Me</span></h2>
+            <div class="about-grid">
+                <div class="about-text-content philosophy-block">
+                    <p class="about-lead">I am driven by curiosity more than convention.</p>
+                    
+                    <p>My work revolves around AI systems, automation, computer vision, Linux, infrastructure, and the invisible layers that keep technology functioning reliably. I enjoy understanding systems deeply — not just using them, but dissecting how they behave under pressure, failure, and scale.</p>
+                    
+                    <p>But my interests do not stop at machines.</p>
+                    
+                    <p>I am equally drawn toward communication, psychology, language, and the patterns behind human behavior. To me, the most interesting problems exist where technology and people intersect.</p>
+                    
+                    <p>I learn by building, breaking, observing, and rebuilding. Most of what I know was shaped less by linear paths and more by experimentation, persistence, and an obsession with understanding how things actually work beneath the surface.</p>
+                    
+                    <p class="philosophy-footer">
+                        I don’t just study machines. I study systems — technical and human alike.<br><br>
+                        For me, growth is not about collecting titles. It is about becoming more precise, more aware, and more capable — technically, intellectually, and personally.
+                    </p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="section">
-            <div class="container">
-                <h2 class="section-title">Education</h2>
-                <div id="education-list" class="grid-list">
-                    <!-- Content injected by JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications" class="section">
-            <div class="container">
-                <h2 class="section-title">Certifications</h2>
-                <div id="certifications-list" class="grid-list">
-                    <!-- Content injected by JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div id="projects-list" class="projects-grid">
-                    <!-- Content injected by JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Exploration Section -->
-        <section id="exploration" class="section">
-            <div class="container">
-                <h2 class="section-title">Exploration</h2>
-                <div id="exploration-list" class="projects-grid">
-                    <!-- Content injected by JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Library Section -->
-        <section id="library" class="section">
-            <div class="container">
-                <h2 class="section-title">Library</h2>
                 
-                <div class="library-subsection">
-                    <h3>Digital Books</h3>
-                    <div id="digital-books-list" class="books-grid">
-                        <!-- Content injected by JS -->
+                <!-- Terminal Window Mockup showing actual IITM and profile details -->
+                <div class="terminal-window glass-card">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="terminal-title">shahid@core:~</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="prompt">$</span> system-diagnostics --verbose
+                        </div>
+                        <div class="terminal-output">
+<pre>{
+  <span class="key">"Name"</span>: <span class="val">"Mohd Shahid"</span>,
+  <span class="key">"education"</span>: {
+    <span class="key">"IIT Madras"</span>: <span class="val">"BS in Data Science (Expected Dec 2027)"</span>,
+    <span class="key">"MANUU"</span>: <span class="val">"BTech in Computer Science"</span>,
+    <span class="key">"AMU"</span>: <span class="val">"Diploma in Electrical Eng."</span>
+  },
+  <span class="key">"certifications"</span>: [
+    <span class="val">"Microsoft: AI-900, AZ-900, DP-900, PL-900"</span>,
+    <span class="val">"NPTEL: PostgreSQL Cricket Analytics, IoT"</span>,
+    <span class="val">"freeCodeCamp: APIs & Backend"</span>
+  ],
+  <span class="key">"env"</span>: <span class="val">"Linux / Bash / PyTorch / Flask / DeepStream"</span>
+}</pre>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="prompt">$</span> <span class="cursor"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid Projects Section - 5 actual projects -->
+        <section class="projects-section" id="projects">
+            <h2 class="section-title"><span class="gradient-text">Featured Work</span></h2>
+            <p class="section-desc">Dissecting models, compiling full-stack codebases, and automating administrative barriers.</p>
+            
+            <div class="bento-grid">
+                
+                <!-- Card A: Music Genre Classification (Deep Learning & GenAI) -->
+                <div class="bento-card bento-w2">
+                    <div class="card-header">
+                        <div class="header-left">
+                            <i data-lucide="music-4" class="icon-pink"></i>
+                            <span class="tag">Deep Learning & GenAI</span>
+                        </div>
+                        <div class="header-right">
+                            <a href="https://github.com/21f2000901/dl-genai-project-26-t1" target="_blank" class="repo-link" aria-label="GitHub Repository"><i data-lucide="github"></i></a>
+                            <a href="https://huggingface.co/spaces/msaligs/music-genre-classifier" target="_blank" class="repo-link" aria-label="Live Hugging Face Space"><i data-lucide="external-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Music Genre Classification</h3>
+                        <p>Designed an advanced PyTorch deep learning pipeline for music genre predictions. Engineered robust Librosa audio feature extractors (Mel-spectrograms, MFCCs) and resolved severe domain shift discrepancies between clean audio training stems and noisy real-world composites using fine-tuned pretrained deep networks, tracked via Weights & Biases.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="chip">PyTorch</span>
+                        <span class="chip">Librosa</span>
+                        <span class="chip">Audio Processing</span>
+                        <span class="chip">W&B tracking</span>
+                        <span class="chip">Kaggle Competition</span>
                     </div>
                 </div>
 
-                <!-- Hard Copy Section Hidden
-                <div class="library-subsection">
-                    <h3>Hard Copy Collection</h3>
-                    <div id="hardcopy-books-list" class="books-grid">
+                <!-- Card B: Home Service v2 -->
+                <div class="bento-card">
+                    <div class="card-header">
+                        <div class="header-left">
+                            <i data-lucide="home" class="icon-indigo"></i>
+                            <span class="tag">Modern Web App</span>
+                        </div>
+                        <div class="header-right">
+                            <a href="https://github.com/msaligs/home_service_v2" target="_blank" class="repo-link" aria-label="GitHub Repository"><i data-lucide="github"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Home Service v2</h3>
+                        <p>Developed a full-stack, multi-role home service booking and dispatch system for IIT Madras Modern Application Development 2 (MAD2) coursework. Implemented Celery for automated background triggers, Redis for responsive data caching, and designed clean interactive client-professional workflows.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="chip">Flask</span>
+                        <span class="chip">Celery</span>
+                        <span class="chip">Redis</span>
+                        <span class="chip">SQLite3</span>
+                        <span class="chip">Vue.js</span>
+                    </div>
+                </div>
+
+                <!-- Card 1: Paradox Text Classification -->
+                <div class="bento-card bento-w2">
+                    <div class="card-header">
+                        <div class="header-left">
+                            <i data-lucide="brain-circuit" class="icon-teal"></i>
+                            <span class="tag">AI vs Human Challenge</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Paradox Text Classification</h3>
+                        <p>Competed in the IIT Madras Paradox competition to distinguish between human-written and AI-generated text. Engineered robust feature pipelines, tuned model hyper-parameters, and achieved <b>78.28% validation accuracy</b>, ranking in the <b>Top 7 participants</b>.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="chip">Scikit-learn</span>
+                        <span class="chip">NLP</span>
+                        <span class="chip">Feature Engineering</span>
+                        <span class="chip">Text Classification</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Grocery Application -->
+                <div class="bento-card">
+                    <div class="card-header">
+                        <div class="header-left">
+                            <i data-lucide="shopping-bag" class="icon-pink"></i>
+                            <span class="tag">Fullstack Web</span>
+                        </div>
+                        <div class="header-right">
+                            <a href="https://github.com/msaligs/Grocery-Application-II" target="_blank" class="repo-link" aria-label="GitHub Repository"><i data-lucide="github"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Flask Grocery Application II</h3>
+                        <p>Developed a secure web portal for buying and selling groceries. Integrated custom database designs, role-based authentication, and security configurations. Awarded an **'S' Grade** by IIT Madras.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="chip">Flask</span>
+                        <span class="chip">HTML/CSS</span>
+                        <span class="chip">Role-Based Auth</span>
+                        <span class="chip">S-Grade</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Financial Sentiment Analysis -->
+                <div class="bento-card">
+                    <div class="card-header">
+                        <div class="header-left">
+                            <i data-lucide="trending-up" class="icon-indigo"></i>
+                            <span class="tag">Natural Language Processing</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Financial Sentiment Analysis</h3>
+                        <p>Trained ComplementNB and MultinomialNB models on highly imbalanced financial comments. Optimized pipeline parameters to achieve a <b>70% test accuracy</b> after thorough EDA.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="chip">Python</span>
+                        <span class="chip">ComplementNB</span>
+                        <span class="chip">EDA</span>
+                        <span class="chip">Imbalanced Data</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Customer Churn Prediction -->
+                <div class="bento-card bento-w2">
+                    <div class="card-header">
+                        <div class="header-left">
+                            <i data-lucide="users" class="icon-teal"></i>
+                            <span class="tag">Data Challenge</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Customer Churn Prediction</h3>
+                        <p>Participated in the Coursera Data Science Challenge. Developed a classifier to predict customer churn in video streaming subscriber databases, achieving a <b>82.49% test accuracy</b> and mapping user patterns to shape retention strategies.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="chip">Pandas</span>
+                        <span class="chip">NumPy</span>
+                        <span class="chip">Predictive Modeling</span>
+                        <span class="chip">Churn Analytics</span>
+                    </div>
+                </div>
+
+                <!-- Card 5: RAC Management System -->
+                <div class="bento-card">
+                    <div class="card-header">
+                        <div class="header-left">
+                            <i data-lucide="workflow" class="icon-pink"></i>
+                            <span class="tag">Automation</span>
+                        </div>
+                        <div class="header-right">
+                            <a href="https://github.com/msaligs/RAC_managment_system" target="_blank" class="repo-link" aria-label="GitHub Repository"><i data-lucide="github"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Research Committee Management</h3>
+                        <p>Designed a database-driven system to automate administrative Research Advisory Committee (RAC) tasks at Maulana Azad National Urdu University. Successfully reduced manual logging delays.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="chip">Python</span>
+                        <span class="chip">SQLite3</span>
+                        <span class="chip">Data Quality</span>
+                    </div>
+                </div>
+
+                <!-- Card 6: Developer Utilities (rgb2hex) -->
+                <div class="bento-card">
+                    <div class="card-header">
+                        <div class="header-left">
+                            <i data-lucide="terminal" class="icon-indigo"></i>
+                            <span class="tag">Systems Core</span>
+                        </div>
+                        <div class="header-right">
+                            <a href="https://github.com/msaligs/rgb2hex" target="_blank" class="repo-link" aria-label="GitHub Repository"><i data-lucide="github"></i></a>
+                            <a href="https://msaligs.github.io/rgb2hex/" target="_blank" class="repo-link" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>rgb2hex Utility & Tools</h3>
+                        <p>Built modular libraries for fast color validations and coordinate tracking, utilizing Python OOP and comprehensive unit testing suites.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="chip">Python OOP</span>
+                        <span class="chip">Unit Testing</span>
+                        <span class="chip">BASH Utilities</span>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Interactive Playground Section -->
+        <section class="playground-section" id="playground">
+            <h2 class="section-title"><span class="gradient-text">Interactive ML Playground</span></h2>
+            <p class="section-desc">Experience my AI models. Test my AI-vs-Human Text Classifier or try the Object Bounding Box simulator.</p>
+            
+            <!-- Tab Controls -->
+            <div class="playground-tabs">
+                <button class="tab-btn active" onclick="switchPlaygroundTab('nlp')">
+                    <i data-lucide="brain"></i> Paradox AI vs Human Text Classifier
+                </button>
+                <button class="tab-btn" onclick="switchPlaygroundTab('yolo')">
+                    <i data-lucide="scan"></i> Bounding Box Object Simulator
+                </button>
+                <button class="tab-btn" onclick="switchPlaygroundTab('hf')">
+                    <i data-lucide="music-4"></i> Live PyTorch Music Classifier
+                </button>
+            </div>
+
+            <!-- Tab 1: NLP / Text Classifier Widget -->
+            <div class="playground-widget glass-card" id="widget-nlp">
+                <div class="widget-controls">
+                    <h4>Paradox NLP Classifier</h4>
+                    <p class="control-help">Enter a sentence or select a sample below to determine whether the writing is Human-written or AI-generated.</p>
+                    
+                    <div class="control-group">
+                        <label>Select Preset Sample</label>
+                        <div class="nlp-samples">
+                            <button class="btn btn-sm active" id="nlp-sample-human" onclick="selectNlpSample('human')">Human Philosophy</button>
+                            <button class="btn btn-sm" id="nlp-sample-ai" onclick="selectNlpSample('ai')">Standard AI Boilerplate</button>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="nlp-input">Custom Input (Type to classify in real-time)</label>
+                        <textarea id="nlp-input" placeholder="Type custom text here..."></textarea>
+                    </div>
+
+                    <div class="prediction-results">
+                        <h5>Classification Confidence</h5>
+                        <div class="prob-row">
+                            <span class="prob-label">Human Written</span>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill bg-teal" id="bar-human" style="width: 96%"></div>
+                            </div>
+                            <span class="prob-pct" id="pct-human">96%</span>
+                        </div>
+                        <div class="prob-row">
+                            <span class="prob-label">AI Generated</span>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill bg-indigo" id="bar-ai" style="width: 4%"></div>
+                            </div>
+                            <span class="prob-pct" id="pct-ai">4%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget-preview">
+                    <!-- Retro text analysis terminal visualizer -->
+                    <div class="waveform-container">
+                        <div class="terminal-analysis" id="terminal-nlp-output">
+                            <div class="term-line text-teal"><i data-lucide="chevron-right" class="term-icon"></i> Tokenizing input text stream...</div>
+                            <div class="term-line text-indigo"><i data-lucide="chevron-right" class="term-icon"></i> Generating word distributions...</div>
+                            <div class="term-line text-pink"><i data-lucide="chevron-right" class="term-icon"></i> Running ComplementNB Classifier...</div>
+                            <div class="term-line text-primary"><i data-lucide="check-circle" class="term-icon"></i> Output: Human Written (96% Confidence)</div>
+                        </div>
+                        <div class="wave-status">
+                            <i data-lucide="cpu" class="pulse-icon"></i>
+                            <span id="nlp-status-label">Awaiting text classification metrics...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: YOLO Tracking Widget -->
+            <div class="playground-widget glass-card" id="widget-yolo" style="display: none;">
+                <div class="widget-controls">
+                    <h4>Bounding Box Simulator</h4>
+                    <p class="control-help">Adjust parameters below to simulate computer vision class confidence thresholds.</p>
+                    
+                    <div class="control-group">
+                        <div class="control-header">
+                            <label for="conf-range">Confidence Threshold</label>
+                            <span class="val-display" id="conf-val">0.50</span>
+                        </div>
+                        <input type="range" id="conf-range" min="0.1" max="0.9" step="0.05" value="0.5">
+                    </div>
+                    
+                    <div class="control-group">
+                        <label>Select Sample Frame</label>
+                        <div class="sample-buttons">
+                            <button class="btn btn-sm active" id="btn-traffic" onclick="selectSample('traffic')">Urban Street</button>
+                            <button class="btn btn-sm" id="btn-office" onclick="selectSample('office')">Study Workspace</button>
+                        </div>
+                    </div>
+
+                    <div class="model-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Inference Speed</span>
+                            <span class="stat-val text-teal">12.5 ms</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Format</span>
+                            <span class="stat-val text-indigo">COCO Annotations</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="widget-preview">
+                    <div class="image-container">
+                        <!-- Simulated YOLO bounding boxes -->
+                        <img src="https://images.unsplash.com/photo-1494783367193-149034c05e8f?q=80&w=600&auto=format&fit=crop" id="sample-img" alt="YOLO Input">
                         
+                        <div class="bbox bbox-group-traffic bbox-1" style="top: 20%; left: 30%; width: 25%; height: 50%;">
+                            <span class="bbox-label">car: 94%</span>
+                        </div>
+                        <div class="bbox bbox-group-traffic bbox-2" style="top: 45%; left: 65%; width: 15%; height: 35%;">
+                            <span class="bbox-label">person: 88%</span>
+                        </div>
+                        
+                        <div class="bbox bbox-group-office bbox-3" style="top: 30%; left: 20%; width: 30%; height: 40%; display: none;">
+                            <span class="bbox-label">laptop: 97%</span>
+                        </div>
+                        <div class="bbox bbox-group-office bbox-4" style="top: 15%; left: 55%; width: 20%; height: 60%; display: none;">
+                            <span class="bbox-label">chair: 82%</span>
+                        </div>
                     </div>
                 </div>
-                -->
             </div>
-        </section>
 
-        <!-- Knowledge Base Section -->
-        <section id="knowledge-base" class="section">
-            <div class="container">
-                <h2 class="section-title">Knowledge Base</h2>
-                <div id="articles-list" class="articles-grid">
-                    <!-- Content injected by JS -->
+            <!-- Tab 3: Hugging Face Live Space -->
+            <div class="playground-widget glass-card" id="widget-hf" style="display: none; grid-template-columns: 1fr; gap: 1.5rem; padding: 3rem;">
+                <div class="widget-controls" style="text-align: left;">
+                    <h4>Live PyTorch Classifier Space</h4>
+                    <p class="control-help">Interact with my live music genre classifier space deployed on Hugging Face. Upload your custom audio streams or noisy composites to test inference in real-time, matching my deep learning and Librosa generalizability research pipelines.</p>
+                </div>
+                <div class="widget-preview" style="width: 100%; border-radius: 20px; overflow: hidden; border: 1px solid var(--border-glass); background: rgba(10, 14, 20, 0.45); box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                    <iframe src="https://huggingface.co/spaces/msaligs/music-genre-classifier" frameborder="0" width="100%" height="520" style="display: block; width: 100%; border: none;"></iframe>
                 </div>
             </div>
         </section>
 
-        <!-- The Vault Section -->
-        <section id="vault" class="section">
-            <div class="container">
-                <h2 class="section-title">The Vault</h2>
-                <div id="links-list" class="links-grid">
-                    <!-- Content injected by JS -->
+        <!-- Experience & Education Section -->
+        <section class="experience-section" id="experience">
+            <h2 class="section-title"><span class="gradient-text">Experience & Education</span></h2>
+            
+            <div class="timeline">
+                <div class="timeline-bar"></div>
+                
+                <!-- Timeline Item 1: Nabeh CV Engineer -->
+                <div class="timeline-item">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="time-duration">Sep 2025 - Present</span>
+                        <h3>Computer Vision Engineer</h3>
+                        <p class="role-location">Nabeh | Full-time | Hyderabad, Telangana (On-site)</p>
+                        <p class="timeline-desc">Leading real-world video analytics workflows. Specializing in high-performance intelligent system architectures using <b>YOLO</b>, <b>NVIDIA DeepStream</b>, and <b>Kafka</b> inside Linux environments to construct scalable and maintainable computer vision pipelines.</p>
+                        <div class="timeline-tech">
+                            <span class="chip">NVIDIA DeepStream</span>
+                            <span class="chip">YOLO</span>
+                            <span class="chip">Kafka</span>
+                            <span class="chip">Linux</span>
+                            <span class="chip">Video Analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2: Nabeh CV Intern -->
+                <div class="timeline-item">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="time-duration">Mar 2025 - Aug 2025</span>
+                        <h3>Computer Vision Intern</h3>
+                        <p class="role-location">Nabeh | Internship | Hyderabad, Telangana (On-site)</p>
+                        <p class="timeline-desc">Engineered computer vision pipelines, developed edge intelligence components, and explored deep learning models for video stream analysis.</p>
+                        <div class="timeline-tech">
+                            <span class="chip">Computer Vision</span>
+                            <span class="chip">Python</span>
+                            <span class="chip">Deep Learning</span>
+                            <span class="chip">Image Processing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3: IIT Madras -->
+                <div class="timeline-item">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="time-duration">Feb 2021 - Dec 2027 (Expected)</span>
+                        <h3>BS in Data Science and Applications</h3>
+                        <p class="role-location">Indian Institute of Technology, Madras (IITM) | Roll No: 21F2000901</p>
+                        <p class="timeline-desc">Intensive academic training in deep learning, data analytics, and machine learning structures. Completed the IITM Advanced Certificate in Machine Learning & Data Science. Earning Grade: A.</p>
+                        <div class="timeline-tech">
+                            <span class="chip">Deep Learning</span>
+                            <span class="chip">PostgreSQL</span>
+                            <span class="chip">Flask</span>
+                            <span class="chip">Pandas</span>
+                            <span class="chip">MLOps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4: MANUU -->
+                <div class="timeline-item">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="time-duration">Sep 2020 - Jul 2024</span>
+                        <h3>BTech in Computer Science</h3>
+                        <p class="role-location">Maulana Azad National Urdu University (MANUU) | Hyderabad</p>
+                        <p class="timeline-desc">Acquired rigorous foundations in computer systems, operating systems, data structures, algorithms, network protocols, and object-oriented programming. Developed database automation routines for University administration panels.</p>
+                        <div class="timeline-tech">
+                            <span class="chip">Computer Science</span>
+                            <span class="chip">Java</span>
+                            <span class="chip">Shell Scripting</span>
+                            <span class="chip">C</span>
+                            <span class="chip">SQLite3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5: AMU -->
+                <div class="timeline-item">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="time-duration">2014 - 2017</span>
+                        <h3>Diploma in Engineering (Electrical)</h3>
+                        <p class="role-location">Aligarh Muslim University (AMU) | Aligarh, UP</p>
+                        <p class="timeline-desc">Acquired core principles of electrical engineering, hardware architectures, circuit calculations, signals, and control systems, framing my hardware-level understanding of computational structures.</p>
+                        <div class="timeline-tech">
+                            <span class="chip">Electrical Circuits</span>
+                            <span class="chip">Signals & Systems</span>
+                            <span class="chip">Hardware Foundations</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
     </main>
 
-    <!-- Footer -->
-    <footer id="contact" class="footer">
+    <!-- Footer Section -->
+    <footer class="footer" id="contact">
         <div class="container footer-content">
-            <div id="footer-info">
-                <!-- Content injected by JS -->
+            <p>&copy; 2026 Mohd Shahid. Handcrafted using static Vanilla HTML, CSS, and JavaScript. Hosting-ready. <span class="footer-divider">|</span> Visits: <span id="visit-count" class="counter-badge">...</span></p>
+            <div class="social-links">
+                <a href="https://github.com/msaligs" target="_blank" aria-label="Primary GitHub"><i data-lucide="github"></i></a>
+                <a href="https://github.com/21f2000901" target="_blank" aria-label="Academic GitHub"><i data-lucide="code-2"></i></a>
+                <a href="https://www.linkedin.com/in/msaligs/" target="_blank" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                <a href="https://learn.microsoft.com/en-us/users/msaligs/" target="_blank" aria-label="Microsoft Learn"><i data-lucide="book-open"></i></a>
+                <a href="https://ds.study.iitm.ac.in/student/21F2000901" target="_blank" aria-label="IIT Madras Portal"><i data-lucide="graduation-cap"></i></a>
+                <a href="mailto:msaligs@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
             </div>
-            <p class="copyright">&copy; <span id="year"></span>. All rights reserved. | Visits: <span id="visit-count">...</span></p>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="assets/js/script.js"></script>
+    <!-- Custom Script File -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

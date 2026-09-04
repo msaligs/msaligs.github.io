@@ -68,7 +68,7 @@
     "description": "Utility to convert RGB colors to Hex format.",
     "tech": ["Utility"],
     "repoUrl": "https://github.com/msaligs/rgb2hex",
-    "demoUrl": https://msaligs.github.io/rgb2hex/,
+    "demoUrl": "https://msaligs.github.io/rgb2hex/",
     "type": "exploration"
   },
   {
@@ -76,7 +76,7 @@
     "description": "A basic calculator application.",
     "tech": [],
     "repoUrl": "https://github.com/msaligs/simple_calculator",
-    "demoUrl": https://msaligs.github.io/simple_calculator/,
+    "demoUrl": "https://msaligs.github.io/simple_calculator/",
     "type": "exploration"
   }
 ]

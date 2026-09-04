@@ -1,35 +1,47 @@
-# Mohd Shahid | Computer Vision & Machine Learning Portfolio
+# Mohd Shahid Portfolio
 
-I build production-minded computer vision and machine-learning systems, from data preparation and model training to real-time multi-camera deployment, event processing, and operations.
+Personal portfolio for Mohd Shahid, a Computer Vision and Machine Learning Engineer. The site presents production-focused video analytics experience, selected public projects, technical capabilities, and contact details for relevant opportunities.
 
-This repository hosts my personal portfolio. It highlights real-time video analytics work, public machine-learning projects, and the systems tools used to deploy reliable pipelines.
+**Live site:** [msaligs.github.io](https://msaligs.github.io/)
 
-## 🔗 Live Site
-👉 **[https://msaligs.github.io/](https://msaligs.github.io/)**
+## What the portfolio covers
 
-## Updating the résumé
+- Production computer-vision work: YOLO, NVIDIA DeepStream, OpenCV, multi-camera video analytics, OCR, tracking, and real-time event processing.
+- Systems work: Apache Kafka, Redis, Docker Compose, Linux, POSIX shared-memory IPC, and Python services.
+- Public projects: music genre classification, bank telemarketing prediction, and a full-stack home-services marketplace.
 
-The download button always points to `assets/resume.pdf`. To publish a newer résumé, replace that file with your new PDF while keeping the exact same filename. No page or link changes are needed.
+The professional-work section includes only information that is appropriate to make public. The project-notes section provides the design and implementation context that would be too detailed for a one-page résumé.
 
----
+## Run locally
 
-## Focus
-- **Production computer vision**: YOLO, NVIDIA DeepStream, OpenCV, multi-camera analytics, OCR, tracking, and real-time event pipelines.
-- **Systems and deployment**: Kafka, Redis, Docker Compose, Linux, POSIX shared-memory IPC, and Python services.
-- **Public projects**: Music genre classification, a bank telemarketing model, and a full-stack home-services marketplace.
+This is a static site; no package installation or build step is required.
 
----
-
-## 💻 Tech Stack
-- **Core**: Static HTML5, CSS3, and minimal ES6 JavaScript
-- **Styling**: Responsive CSS grid, accessible navigation, and reduced-motion support
-- **Hosting**: GitHub Pages
-
----
-
-## 🚀 Local Hosting
-To run the preview server locally:
 ```bash
-python3 -m http.server 8080
+python3 -m http.server 4173
 ```
-Then open **`http://localhost:8080`** in your browser.
+
+Open [http://localhost:4173](http://localhost:4173).
+
+## Update the résumé
+
+The résumé download is intentionally fixed to one stable path:
+
+```text
+assets/resume.pdf
+```
+
+To publish a new version, replace that PDF while keeping the filename exactly `resume.pdf`. The website’s download buttons will continue to work without any HTML, CSS, or JavaScript changes.
+
+## Project structure
+
+```text
+index.html              Page content and portfolio copy
+assets/css/style.css    Responsive visual design
+assets/js/main.js       Mobile navigation behaviour
+assets/resume.pdf       Downloadable résumé
+assets/data/            Supporting portfolio data
+```
+
+## Deployment
+
+The repository is deployed as a GitHub Pages site from the `main` branch. After committing and pushing changes, GitHub Pages publishes the updated static files.
